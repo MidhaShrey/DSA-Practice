@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// 1. Normal Execution without function
 int main()
 {
 	int n, r;
@@ -24,4 +25,25 @@ int main()
 	int result = factN / (factR * factNR);
 	cout << result;
 	return 0;
+}
+
+// 2. Using Function
+int factorial(int n)
+{
+	int fact = 1;
+	for (int i = 1; i <= n; i++)
+	{
+		fact = fact * i;
+	}
+	return fact;
+}
+int main()
+{
+	int n, r, factN = 1, factNR = 1, factR = 1;
+	cin >> n >> r;
+	factN=factorial(n);
+	factR=factorial(r);
+	factNR=factorial(n-r);
+	int result=factN/(factR*factNR);
+	cout<<result;
 }
